@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pet Adoption Centre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .pet {
+            border: 2px solid #ccc;
+            margin: 10px;
+            padding: 15px;
+        }
+
+        .available {
+            border-color: green;
+        }
+
+        .adopted {
+            border-color: red;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Happy Paws Adoption Centre</h1>
+    <div id="pet-list"></div>
+
+    <script>
+        // Your JavaScript code goes here
+        let pets = [
+            { name: "Garfield", type: "cat", age: 3, adopted: false },    //create pet array 
+            { name: "Max", type: "dog", age: 2, adopted: false },
+            { name: "Oscar", type: "cat", age: 5, adopted: false },
+            { name: "Sam", type: "dog", age: 7, adopted: false }
+        ];
+
+        //display pet information function
+        function displayPet(pet) {
+            // Create HTML string for one pet
+            // Include: name, type, age, and adoption status
+            // Return the HTML string
+            let html = `<div>Pet name: ${pet.name}. Type: ${pet.type}. Age: ${pet.age}. Adoption status: ${pet.adopted} </div>`; //Adoption status: ${adoptionStat}
+            let adoptionStat = pet.adopted ? "pet already adopted" : "pet is available";
+            return html;
+        }
+
+        function showAllPets() {
+            // Get the container div
+            const container = document.querySelector("#pet-list");
+            // Loop through pets array
+            for (const pet of pets) {
+                // Build up HTML string
+                // Set innerHTML of container           
+                container.innerHTML += displayPet(pet);
+            }
+        }
+
+        function adoptPet(petName){
+            // Use a loop to find the pet with matching name
+            for (const name of pet){
+                if(pet.name == petName)
+                {
+                    // Set their adopted property to true
+                    pet.adopted = true; 
+                }
+            }    
+        }
+        
+        // Call showAllPets() to refresh the display
+        adoptPet("Garfield");
+        showAllPets();
+        
+    </script>
+</body>
+
+</html>

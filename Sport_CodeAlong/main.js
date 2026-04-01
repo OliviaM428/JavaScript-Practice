@@ -61,4 +61,18 @@ function showAllResults(resultsList) {
         resultsTable.innerHTML += currentRow;
     }
 }
+
+function checkResult(gameData){
+    if (gameData.hawksScore > gameData.opponentScore)
+    {
+        result = "win";
+    }else if(gameData.hawksScore < gameData.opponentScore)
+    {
+        result = "loose";
+    }else
+    {
+        result = "tie";
+    }
+    return result;
+}
 showAllResults(seasonResults);

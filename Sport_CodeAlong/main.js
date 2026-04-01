@@ -19,20 +19,22 @@ const seasonResults = [
     {
         gameDate: "2026-10-22",
         gameLocation: "Bell Centre",
-        hawksScore: 3,
+        hawksScore: 1,
         opponentTeam: "Toronto Maple Leafs",
-        opponentScore: 2,
-        hawksWin: true,
+        opponentScore: 3,
+        hawksWin: false,
     },
     {
         gameDate: "2026-10-25",
         gameLocation: "Scotiabank Arena",
-        hawksScore: 1,
+        hawksScore: 3,
         opponentTeam: "Montreal Canadiens",
         opponentScore: 2,
-        hawksWin: false,
+        hawksWin: true,
     },
 ]
+
+
 
 const resultsTable = document.querySelector("#season-results-table")
 

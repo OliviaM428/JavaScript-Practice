@@ -28,3 +28,8 @@ thead{
 .hawks-lose{
     color: darkred;
 }
+
+caption{
+    font-style: italic;
+    padding: 0.5em;
+}

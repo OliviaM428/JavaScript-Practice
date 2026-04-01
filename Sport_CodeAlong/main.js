@@ -50,3 +50,4 @@ function showAllResults(resultsList) {
         console.log(currentRow);
     }
 }
+showAllResults(seasonResults);

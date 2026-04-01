@@ -29,9 +29,10 @@ const seasonResults = [
 const resultsTable = document.querySelector("#season-results-table")
 
 function createResultRow(gameData) {
+    const winOrLoose = gameData.hawksWin ? "hawks-ftw": "hawks-lose";
     //Generate a row from a game object
     const resultRow = `
-    <tr>
+    <tr class="${winOrLoose}">
     <td>${gameData.gameDate}</td>
     <td>${gameData.gameLocation}</td>
     <td>${gameData.hawksScore}</td>

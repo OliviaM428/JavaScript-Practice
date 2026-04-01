@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Tracker Website Demo</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <h1>Hawks Season Results</h1>
-    <table id ="season-results-table">
-        <caption>Game results for the Hawks</caption>
+    <table>
+    <caption>Game results for the Hawks</caption>
         <thead>
             <tr>
                 <td>Game Date</td>
@@ -19,7 +20,9 @@
                 <td>Did we win?</td>
             </tr>
         </thead>
-        
+        <tbody id ="season-results-table">
+            <!--Table rows generated here by main.js-->
+        </tbody>
     </table>
     <script src = "main.js" defer></script>
 </body>

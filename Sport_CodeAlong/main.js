@@ -20,9 +20,17 @@ const seasonResults = [
         gameDate: "2026-10-22",
         gameLocation: "Bell Centre",
         hawksScore: 3,
-        opponentTeam: "Canucks",
+        opponentTeam: "Toronto Maple Leafs",
         opponentScore: 2,
         hawksWin: true,
+    },
+    {
+        gameDate: "2026-10-25",
+        gameLocation: "Scotiabank Arena",
+        hawksScore: 1,
+        opponentTeam: "Montreal Canadiens",
+        opponentScore: 2,
+        hawksWin: false,
     },
 ]
 

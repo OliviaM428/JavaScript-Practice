@@ -30,7 +30,32 @@ const book = [{
 },
 ]
 
-const container = document.createElement('.book-card');
+let cardCode = ``;
+
+book.forEach(function(cardData){
+
+    cardCode =
+        cardCode +
+        `
+        <article>
+        <div>
+        <img src ="${cardData.imageUrl}">
+        </div>
+        <div>
+        <h3>Title: ${cardData.title}</h3>
+        <p>${result.author}</p>
+        </div>
+        </article>
+        `;
+
+});
+
+const bookCards = document.querySelector(".cards");
+bookCards.innerHTML = cardCode;
+
+
+
+/*const container = document.createElement('.book-card');
 book.forEach((result) => {
     const card = document.createElement("div");
     card.classList = "card-body";
@@ -51,7 +76,7 @@ book.forEach((result) => {
     `;
 
     container.innerHTML += content;
-});
+}); */
 
 
     

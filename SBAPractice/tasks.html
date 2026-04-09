@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBA practice</title>
+</head>
+
+<body>
+
+    <!-- TASK 1 (6 points) --------------------------------------------------------------------------------
+    Below you will find some data about a dog, including an image URL.
+    There is some HTML for a card that displays the dog data, but someone has hard coded it so it can
+    only ever display that one dog.
+    
+    1. Write JavaScript in the script tags below to display the dog data in the card instead - you can
+    remove the existing HTML (leave the outer div) or edit it to work with your JavaScript.
+    
+    2. Write CSS to style the card to look like the reference image. Hints:
+        The text colour is #333
+        The h2 is 1.5 times as big as the base font size
+        The h3s are 1.2 times as big as the base font size
+        Use CSS to make all the headings uppercase
+        Use flexbox to lay out the card
+
+    3. Make a commit after you have completed this task.
+
+-->
+    <div class="card" id="single-card">
+        <!-- You should change the HTML in here if you need to, or remove it if you like -->
+        <h2>German Longhaired Pointer</h2>
+        <img src="https://images.dog.ceo/breeds/pointer-germanlonghair/hans2.jpg" alt="dog">
+        <div class="info">
+            <h3>ORIGIN</h3>
+            <p>Germany</p>
+            <h3>SIZE</h3>
+            <p>Large</p>
+            <h3>TEMPERAMENT</h3>
+            <ul>
+                <li>Affectionate</li>
+                <li>Energetic</li>
+                <li>Intelligent</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const dog = {
+            "id": 23,
+            "breed": "German Longhaired Pointer",
+            "origin": "Germany",
+            "size": "Large",
+            "temperament": ["Affectionate", "Energetic", "Intelligent"],
+            "colors": ["Liver", "Liver and White"],
+            "coatType": "Double coat",
+            "coatLength": "Medium",
+            "image": "https://images.dog.ceo/breeds/pointer-germanlonghair/hans2.jpg"
+        }
+
+
+        const card = document.getElementById('single-card');
+        card.querySelector('h3').textContent = dogData.breed;
+        card.querySelector('img').src = dogData.imageUrl;
+        card.querySelector('h3: nth-of-type(1) + p').textContent = dog.origin;
+        card.querySelector('h3: nth-of-type(1) + p').textContent = dog.size;
+        card.querySelector('h3: nth-of-type(1) + p').textContent = dog.colors.map(t=> `<li>`)
+
+        
+        
+          
+
+        // Your JavaScript here: use DOM manipulation to display the above data in a card
+
+    </script>
+
+    <style>
+        /* Write your styles here (I'm giving you some for free too) */
+        .card {
+            display: flex;
+            width: 300px;
+            border: 1px solid #333;
+            padding: 10px;
+        }
+    </style>
+
+
+
+</body>
+
+</html>

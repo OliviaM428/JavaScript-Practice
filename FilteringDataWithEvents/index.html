@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template 3</title>
+</head>
+
+<body>
+    <div class="filter-container">
+        <!-- Add your select element here -->
+    </div>
+
+    <div class="cards-container">
+        <!-- Your cards will be added here using JavaScript -->
+    </div>
+
+    <script>
+        // Fetch data from this API
+        const apiUrl = "https://jsonplaceholder.typicode.com/photos?_limit=20";
+        // Your JavaScript here
+        // 1. Fetch the data
+        const container = document.querySelector(".cards-container");
+        //error handling if server doesnt respond
+        async function createCards() {
+            try {
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error(`Response Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                console.log(data);
+
+                let html = "";
+
+                data.forEach(item => {
+                    html += `
+                <div class="card">
+                    <h3>${item.title}</h3>
+                    <p>ID: ${item.id}</p>
+                    <img src="${item.thumbnailUrl}" alt="${item.title}">
+                </div>
+            `;
+                });
+
+                container.innerHTML = html;
+
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        createCards();
+        // 2. Create a dropdown with album IDs as options
+
+        // 3. Add event listener to filter cards when selection changes
+        // 4. Display filtered cards
+
+    </script>
+
+    <style>
+        /* Your CSS here
+           Requirements:
+           - Same card layout as Template 2
+           - Filter container positioned at the top
+           - Maintain 3-column layout for cards
+        */
+        .cards-container {       
+            display: grid; /*Css grid */
+            grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+            grid-gap: 20px;
+        }
+        .card{
+            border: 1px solid #ccc;
+            padding: 10px;               
+        }
+
+        
+    </style>
+</body>
+
+</html>
